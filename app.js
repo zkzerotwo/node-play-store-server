@@ -9,18 +9,11 @@ const apps = require('./playstore');
 app.use(morgan('common'));
 app.use(cors());
 
-// const genres = ['Action', 'Puzzle', 'Strategy', 'Casual', 'Arcade', 'Card']
-
 const query =
 
     app.get('/apps', (req, res) => {
         let sort = req.query.sort
         let genre = req.query.genres
-        // let results = apps
-
-        // .filter(app =>
-        //     app.App
-        //         .includes(sort.toLowerCase()));
         console.log(req)
         // console.log(results);
         console.log(sort);
@@ -49,7 +42,4 @@ const query =
         res
             .json(results)
     })
-
-app.listen(8000, () => {
-    console.log('Server started on PORT 8000');
-});
+module.exports = app
