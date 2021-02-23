@@ -9,7 +9,6 @@ const apps = require('./playstore');
 app.use(morgan('common'));
 app.use(cors());
 
-const query =
 
     app.get('/apps', (req, res) => {
         let sort = req.query.sort
@@ -21,7 +20,7 @@ const query =
         if (!['App', 'rating'].includes(sort)) {
             return res
                 .status(400)
-                .send('Sort must be app or rating')
+                .send('Sort must be one of App or rating')
         }
 
         if (sort === 'App') {
